@@ -14,3 +14,7 @@
 - `dev-back` : Starts the Express backend server
 - `lint` : Runs validation tools, and refuses unclean code (will be executed on every _commit_)
 - `fix` : Fixes linter errors (run it if `lint` growls on your code !)
+
+### Available Challenge DB & CSS
+
+- In folder `CHALLENGE DB AND CSS`
