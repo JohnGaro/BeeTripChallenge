@@ -12,59 +12,29 @@ const browse = (req, res) => {
     });
 };
 
-const read = (req, res) => {
-  models.item
-    .find(req.params.id)
-    .then(([rows]) => {
-      if (rows[0] == null) {
-        res.sendStatus(404);
-      } else {
-        res.send(rows[0]);
-      }
-    })
-    .catch((err) => {
-      console.error(err);
-      res.sendStatus(500);
-    });
-};
+// const add = (req, res) => {
+//   const namesPlayersAndListOfPoints = req.body;
 
-const edit = (req, res) => {
-  const item = req.body;
+//     .res.send(namesPlayersAndListOfPoints);
+//     .catch((err) => {
+//       console.error(err);
+//       res.sendStatus(500);
+//     });
+// };
 
-  // TODO validations (length, format...)
-
-  item.id = parseInt(req.params.id, 10);
-
-  models.item
-    .update(item)
-    .then(([result]) => {
-      if (result.affectedRows === 0) {
-        res.sendStatus(404);
-      } else {
-        res.sendStatus(204);
-      }
-    })
-    .catch((err) => {
-      console.error(err);
-      res.sendStatus(500);
-    });
-};
-
-const add = (req, res) => {
-  const item = req.body;
-
-  // TODO validations (length, format...)
-
-  models.item
-    .insert(item)
-    .then(([result]) => {
-      res.location(`/items/${result.insertId}`).sendStatus(201);
-    })
-    .catch((err) => {
-      console.error(err);
-      res.sendStatus(500);
-    });
-};
+// const add = (req, res) => {
+// const item = req.body;
+// console.warn("item", item);
+// models.item
+// .insert(item)
+// .then(([result]) => {
+// res.location(`/items/${result.insertId}`).sendStatus(201);
+// })
+// .catch((err) => {
+// console.error(err);
+// res.sendStatus(500);
+// });
+// };
 
 const destroy = (req, res) => {
   models.item
@@ -84,8 +54,5 @@ const destroy = (req, res) => {
 
 module.exports = {
   browse,
-  read,
-  edit,
-  add,
   destroy,
 };
