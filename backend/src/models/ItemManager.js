@@ -5,6 +5,13 @@ class ItemManager extends AbstractManager {
     super({ table: "item" });
   }
 
+  // setMatch(namesPlayersAndListOfPoints) {
+  //   return this.connection.query(
+  //     `insert into ${this.table} (title) values (?)`,
+  //     [item.title]
+  //   );
+  // }
+
   insert(item) {
     return this.connection.query(
       `insert into ${this.table} (title) values (?)`,

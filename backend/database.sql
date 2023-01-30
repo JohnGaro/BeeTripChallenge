@@ -1,6 +1,17 @@
-CREATE TABLE item (
-  id int(11) UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
-  title varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+DROP TABLE IF EXISTS player;
 
-INSERT INTO item (title) VALUES ('Stuff'), ('Doodads');
+CREATE TABLE player (
+  id int PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  playerName varchar(32) NOT NULL
+  playerLevel int NOT NULL
+);
+
+DROP TABLE IF EXISTS Points;
+
+CREATE TABLE Points (
+  id int PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  player_ID int NOT NULL,
+  points int NOT NULL,
+  FOREIGN KEY (player_ID) REFERENCES player(id)
+);
+
