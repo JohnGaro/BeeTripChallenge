@@ -100,7 +100,7 @@ function App() {
           [winnerPoint]: currentSet[winnerPoint] + 1,
         };
       }
-      // console.warn("currentGame adv", currentGame);
+      console.warn("currentGame adv", currentGame);
     };
 
     const winnerGameByTieBreak = (point) => {
@@ -144,7 +144,7 @@ function App() {
           [winnerPoint]: currentSet[winnerPoint] + 1,
         };
       }
-      // console.warn("currentGame tieBreak", currentGame);
+      console.warn("currentGame tieBreak", currentGame);
     };
     for (const point of matchPoints) {
       if (setWinner[player1] - setWinner[player2] === 3) {
@@ -165,7 +165,7 @@ function App() {
               tennisPointWithoutAdvantage.indexOf(currentGame[point.wonBy]) + 1
             ],
         };
-        // console.warn("currentGame", currentGame);
+        console.warn("currentGame", currentGame);
         if (currentGame[point.wonBy] === "W" && !tieBreak()) {
           currentSet = {
             ...currentSet,
@@ -214,7 +214,7 @@ function App() {
           }
         }
       } else if (tieBreak()) {
-        // console.warn("tieBreak", tieBreak());
+        console.warn("tieBreak", tieBreak());
         winnerGameByTieBreak(point);
       }
     }
