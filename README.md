@@ -6,6 +6,8 @@
 
 ### EXERCICES DB AND CSS IN FOLDER 'DB' AND 'INTEGRATION'
 
+### To do
+
 - Clone this repo, enter it
 - Run command `npm run setup`
 
