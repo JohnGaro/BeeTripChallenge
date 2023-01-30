@@ -4,6 +4,11 @@
 - Clone this repo, enter it
 - Run command `npm run setup`
 
+### EXERCICES DB AND CSS IN FOLDER 'DB' AND 'INTEGRATION'
+
+- Clone this repo, enter it
+- Run command `npm run setup`
+
 ### Available Commands
 
 - `setup` : Initialization of frontend and backend, as well as all toolings
