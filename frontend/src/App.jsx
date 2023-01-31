@@ -4,7 +4,7 @@ import "./App.css";
 function App() {
   const [players, setPlayers] = useState([]);
   const [pointsGame, setPointsGame] = useState([]);
-  const [gameStat, setGameStat] = useState([]);
+  const [gameStat, setGameStat] = useState({});
   const handlePlayer1Level = (e) => {
     if (e.target.value <= 10) {
       setPlayers({ ...players, player1Level: e.target.value });
@@ -235,8 +235,7 @@ function App() {
     getWinnerByPoints(pointsGame, players.player1Name, players.player2Name);
   }, [pointsGame]);
 
-  console.warn("gameStat", gameStat.currentGame[players.player1Name]);
-  console.warn("gameStat2", gameStat.currentGame[players.player2Name]);
+  console.warn("gameStat", gameStat);
 
   return (
     <div className="App">
@@ -298,7 +297,7 @@ function App() {
         </form>
       </div>
       <p>Current Game:</p>
-      {gameStat ? (
+      {Object.keys(gameStat).length > 0 ? (
         <>
           <div>
             {players.player1Name}
@@ -313,7 +312,7 @@ function App() {
         </>
       ) : null}
       <p>Current Set:</p>
-      {gameStat ? (
+      {Object.keys(gameStat).length > 0 ? (
         <>
           <div>
             {players.player1Name}
@@ -328,7 +327,7 @@ function App() {
         </>
       ) : null}{" "}
       <p>Number of Set win:</p>
-      {gameStat ? (
+      {Object.keys(gameStat).length > 0 ? (
         <>
           <div>
             {players.player1Name}
@@ -343,7 +342,7 @@ function App() {
         </>
       ) : null}{" "}
       <p>Winner of the match :</p>
-      {gameStat.winner ? <div>{gameStat.winner}</div> : null}{" "}
+      {gameStat.winner ? <div>{gameStat.winner}</div> : "No winner yet"}
     </div>
   );
 }
